@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, EB_Garamond } from "next/font/google";
 import "./globals.css";
 import Header from "@/component/header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const ebGaramond = EB_Garamond({
+  subsets: ['latin'],
+  variable: '--font-ebgaramond',
+})
+
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -14,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Touxy portfolio",
+  title: "TXY Portfolio",
   description: "tech portfolio",
+  icons: {icon: '/icon.jpg'},
 };
 
 export default function RootLayout({
@@ -26,9 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${ebGaramond.variable} antialiased`}
        >
-        <Header />
+       
         {children}
       </body>
     </html>
