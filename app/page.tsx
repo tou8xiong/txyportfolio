@@ -33,7 +33,7 @@ export default function Home() {
         <HomeSection />
         <Project />
         <Education />
-        <Skills />
+        <Skills pagemode={pagemode} setPagemode={setPagemode} />
       </div>
     </div>
   );

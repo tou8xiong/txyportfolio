@@ -10,7 +10,7 @@ const images = [
     "/image6.png",
     "/image7.png",
     "/image8.png",
-    "/image9.png"
+    "/image9.png",
 
 ];
 
@@ -73,6 +73,7 @@ export default function Project() {
                 </div>
                 <div id="projectsection" className="ml-30">
                     <h1 className="text-lg font-bold">Todolist Project</h1>
+                    <a href="https://www.todolifetask.xyz/" className="text-md text-sky-500 underline underline-offset-1">Visit the project</a>
                     <p className="text-amber-700 font-bold">Feature</p>
                     <ul className="ml-5">
                         <li>Addtasks</li>

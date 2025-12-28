@@ -56,7 +56,7 @@ export default function Header(props: { pagemode: string, setPagemode: (pagemode
                 <button onClick={handleMode}>{pagemode === "light"? <FaRegLightbulb size={30}/> : <FaLightbulb size={30}/> }</button>
                 <button onClick={handleInage} className="bg-gray-500 py-1 px-4 hover:bg-gray-600 cursor-pointer rounded">Contect</button>
                 {image &&
-                    <Image src={QRImage} alt="qr" width={300} height={300} className="absolute top-12 right-0" />}
+                    <Image src={QRImage} alt="qr" width={300} height={300} className="absolute top-13 right-0 shadow-gray-300 shadow-xl"  />}
             </div>
         </div>
     )
