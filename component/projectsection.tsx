@@ -2,17 +2,17 @@
 import { useEffect, useState } from "react";
 
 const images = [
-    "/Screenshot 2025-10-31 165448.png",
-    "/Screenshot 2025-11-02 105350.png",
-    "/Screenshot 2025-11-04 164532.png",
-    "/Screenshot 2025-11-04 164546.png",
     "/image1.png",
     "/image2.png",
     "/image3.png",
     "/image4.png",
-    "/image5.png"
+    "/image5.png",
+    "/image6.png",
+    "/image7.png",
+    "/image8.png",
+    "/image9.png"
+
 ];
-console.log(images);
 
 export default function Project() {
     const [current, setCurrent] = useState(0);
