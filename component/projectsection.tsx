@@ -10,7 +10,7 @@ const images = [
     "/image6.png",
     "/image7.png",
     "/image8.png",
-    "/image9.png",
+    "/image9.png"
 
 ];
 
@@ -30,20 +30,21 @@ export default function Project() {
     const prevSlide = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
 
     return (
-        <div id="project" className="pt-30 border-0 ">
+        <div id="project" className=" pt-40 ">
+        <div  >
             <h1 className="text-center p-6 text-4xl font-bold ">Project</h1>
             <div className="w-full flex justify-center ">
                 <div className="relative w-full flex  max-w-2xl  overflow-hidden rounded-xl shadow-lg">
                     <div
-                        className="flex transition-transform duration-700 ease-in-out"
+                        className="flex transition-transform  border-amber-800 duration-700 ease-in-out"
                         style={{ transform: `translateX(-${current * 100}%)` }}
                     >
                         {images.map((src, index) => (
                             <img
                                 key={index}
                                 src={src}
-                                alt={`Slide ${index}`}
-                                className="w-full "
+                                alt={`Slide ${index} `}
+                                className="w-fit flex border"
                             />
                         ))}
                     </div>
@@ -69,7 +70,6 @@ export default function Project() {
                             />
                         ))}
                     </div>
-
                 </div>
                 <div id="projectsection" className="ml-30">
                     <h1 className="text-lg font-bold">Todolist Project</h1>
@@ -90,6 +90,7 @@ export default function Project() {
             <div className="w-full flex justify-center">
                 <hr className="text-black-500 w-[500px] border-2 border-solid border-black- items-center text-center mt-30 font-bold"></hr>
                 </div>
+        </div>
         </div>
     );
 }

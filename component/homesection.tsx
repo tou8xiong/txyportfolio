@@ -6,10 +6,10 @@ import { FaSquareGithub } from "react-icons/fa6";
 
 export default function HomeSection() {
     return (
-        <div className="border-0 flex justify-center flex-col font-serif ">
-            <div id="homesection" className="flex justify-around border-0 pt-10">
+        <div id="homesection" className=" flex justify-center flex-col pt-20 font-serif ">
+            <div  className="flex justify-around  pt-10">
                 <div className="border-0 p-5 ">
-                    <p className="text-md">Hey, I'm   <strong className="text-3xl">TouXiong</strong>
+                    <p className="text-md">Hey, I'm  <strong className="text-3xl">TouXiong</strong>
                     </p>
                     <span >My social</span><br></br>
                     <div className="flex border-0 w-fit gap-1 bg-white justify-center rounded">
@@ -30,7 +30,6 @@ export default function HomeSection() {
                         My goal is to grow into a developer who delivers complete and impactful solutions.</p>
                     <p className="text-amber-600 font-bold"><span >Tech</span> is my passion <span>building</span> is my drive<span> Growth </span> is my Goal.</p>
                 </div>
-
             </div>
             <div className="w-full flex justify-center">
                 <hr className="text-black-500 w-[500px] border-2 border-solid border-black- items-center text-center mt-30 font-bold"></hr>

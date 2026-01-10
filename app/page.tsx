@@ -28,7 +28,7 @@ export default function Home() {
     <div style={pagemode === "dark" ? { backgroundColor: "#141414", color: "#ededed" } :
       { backgroundColor: "#ffffff", color: "#171717" }}
       className={"flex justify-center border-0 flex-col"}>
-      <div className="flex flex-col gap-30 border-0" >
+      <div className="flex flex-col gap-10 border-0" >
         <Header pagemode={pagemode} setPagemode={setPagemode} />
         <HomeSection />
         <Project />
