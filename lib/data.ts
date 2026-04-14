@@ -57,23 +57,35 @@ export const EDUCATION_DATA = [
 ];
 
 export const PROJECT_IMAGES = [
-  "/image1.png",
-  "/image2.png",
-  "/image3.png",
-  "/image4.png",
-  "/image5.png",
-  "/image6.png",
-  "/image8.png",
-  "/image9.png",
+  "/image8/todolifeproject-iamge (1).png",
+  "/image8/todolifeproject-iamge (2).png",
+  "/image8/todolifeproject-iamge (3).png",
+  "/image8/todolifeproject-iamge (4).png",
+  "/image8/todolifeproject-iamge (5).png",
+  "/image8/todolifeproject-iamge (6).png",
+  "/image8/todolifeproject-iamge (7).png",
+  "/image8/todolifeproject-iamge (8).png",
+  "/image8/todolifeproject-iamge (9).png",
+  "/image8/todolifeproject-iamge (10).png",
 ];
 
 export const PROJECT_FEATURES = [
-  "Add & Edit Tasks",
-  "Task List & Done Board",
-  "Delete Tasks",
-  "Notes Section",
-  "LocalStorage Sync",
-  "Firebase Auth (Login / Logout)",
+  "Task Management - Create, view, and manage tasks with priority, type, deadline",
+  "AI Productivity Assistant - Personal AI chat for task help and suggestions",
+  "Productivity Dashboard - Study stats, Pomodoro timer, weekly progress",
+  "Notes & Ideas - Idea capture and rich text editor",
+  "PDF Tools - In-browser PDF annotation and image background removal",
+  "Firebase Authentication - Login and signup flows",
+];
+
+export const PROJECT_TECH = [
+  "Next.js 16",
+  "React 19",
+  "TypeScript",
+  "Tailwind CSS v4",
+  "Firebase Auth",
+  "Supabase",
+  "Redis",
 ];
 
 export const DESIGN_IMAGES = ["/dsimg1.png", "/designimg2.png"];

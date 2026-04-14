@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiExternalLink, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import SectionHeading from "@/component/ui/SectionHeading";
 import SectionDivider from "@/component/ui/SectionDivider";
-import { PROJECT_IMAGES, PROJECT_FEATURES } from "@/lib/data";
+import { PROJECT_IMAGES, PROJECT_FEATURES, PROJECT_TECH } from "@/lib/data";
 import { fadeLeft, fadeRight } from "@/lib/variants";
 
 export default function Project() {
@@ -32,7 +32,7 @@ export default function Project() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="relative w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl shrink-0 bg-gray-100 dark:bg-gray-800"
+          className="relative w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl shrink-0 bg-gray-100 dark:bg-gray-800 border-4 border-yellow-500"
         >
           <div className="relative aspect-video overflow-hidden">
             <AnimatePresence mode="wait">
@@ -87,7 +87,7 @@ export default function Project() {
           className="space-y-5 w-full"
         >
           <div>
-            <h3 className="text-2xl md:text-3xl font-bold">Todolist App</h3>
+            <h3 className="text-2xl md:text-3xl font-bold">Key Features</h3>
             <a
               href="https://www.todolifetask.xyz/"
               target="_blank"
@@ -99,9 +99,6 @@ export default function Project() {
           </div>
 
           <div>
-            <p className="text-sm tracking-widest uppercase text-black dark:text-gray-400 mb-3 font-semibold">
-              Features
-            </p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
               {PROJECT_FEATURES.map((f) => (
                 <li
@@ -113,6 +110,22 @@ export default function Project() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div>
+            <p className="text-sm tracking-widest uppercase text-black dark:text-gray-400 mb-3 font-semibold">
+              Tech Stack
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {PROJECT_TECH.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-3 py-1 text-sm bg-accent/10 text-accent rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
