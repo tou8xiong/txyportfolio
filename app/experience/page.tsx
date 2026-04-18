@@ -9,6 +9,24 @@ import { useTheme } from "@/component/ThemeProvider";
 
 const EXPERIENCES = [
   {
+    role: "App Developer & Website Developer",
+    company: "Comet Digital Agency",
+    period: "2024 – Present",
+    type: "Part-time",
+    description:
+      "Developing mobile applications using Flutter and building websites with TypeScript. Working on various projects for clients including task management apps, productivity tools, and custom web solutions.",
+    tags: ["Flutter", "Dart", "TypeScript", "React", "Next.js"],
+  },
+  {
+    role: "Tester",
+    company: "Comet Digital Agency",
+    period: "2024 – Present",
+    type: "Part-time",
+    description:
+      "Testing and quality assurance for mobile and web applications. Identifying bugs, ensuring proper functionality, and maintaining code quality standards.",
+    tags: ["QA Testing", "Bug Tracking", "Quality Assurance"],
+  },
+  {
     role: "Frontend Developer Intern",
     company: "Tech Startup — Vientiane",
     period: "Jun 2024 – Aug 2024",

@@ -14,7 +14,6 @@ const MORE_LINKS = [
   { label: "Designing",        href: "/designpage" },
   { label: "Experience Work",  href: "/experience" },
   { label: "Activities",       href: "/activities" },
-  { label: "Volunteer",        href: "/volunteer" },
 ];
 
 export default function Header() {

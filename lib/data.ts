@@ -21,19 +21,19 @@ export const SOCIAL_LINKS = [
 export const SKILLS_DATA = [
   {
     title: "Languages",
-    items: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "React Native", "Tailwind CSS"],
+    items: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "React Native", "Flutter", "Dart"],
   },
   {
     title: "Technical Skills",
-    items: ["Graphic Design", "App & Website Dev", "UX-UI Design"],
+    items: ["App Development", "Website Development", "Graphic Design", "UX-UI Design"],
   },
   {
     title: "Tools",
-    items: ["VS Code", "GitHub", "Firebase", "Expo"],
+    items: ["VS Code", "GitHub", "Firebase", "Expo", "Supabase", "Redis"],
   },
   {
     title: "Databases",
-    items: ["Firebase Database", "MySQL"],
+    items: ["Firebase Database", "MySQL", "Supabase"],
   },
   {
     title: "Soft Skills",
