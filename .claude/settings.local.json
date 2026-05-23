@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"E:\\\\comet-aplication\\\\txyportfolio\\\\public\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object FullName)",
+      "PowerShell(Get-ChildItem -Path \"E:\\\\comet-aplication\\\\txyportfolio\\\\public\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object -ExpandProperty FullName)"
+    ]
+  }
+}

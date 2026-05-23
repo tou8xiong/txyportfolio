@@ -1,8 +1,9 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
-import { FiArrowLeft, FiBriefcase } from "react-icons/fi";
+import { FiArrowLeft, FiBriefcase, FiChevronLeft, FiChevronRight, FiExternalLink } from "react-icons/fi";
 import { BsFire } from "react-icons/bs";
 import { fadeUp, stagger } from "@/lib/variants";
 import { useTheme } from "@/component/ThemeProvider";
@@ -11,55 +12,104 @@ const EXPERIENCES = [
   {
     role: "App Developer & Website Developer",
     company: "Comet Digital Agency",
-    period: "2024 – Present",
+    period: "Jan 2026 – Present",
     type: "Part-time",
+    link: "https://comet.la/",
+    images: [
+      "/experience-images/comet-digital/image0.jpg",
+      "/experience-images/comet-digital/image1.jpg",
+      "/experience-images/comet-digital/image2.jpg",
+    ],
     description:
       "Developing mobile applications using Flutter and building websites with TypeScript. Working on various projects for clients including task management apps, productivity tools, and custom web solutions.",
     tags: ["Flutter", "Dart", "TypeScript", "React", "Next.js"],
   },
   {
-    role: "Tester",
-    company: "Comet Digital Agency",
-    period: "2024 – Present",
+    role: "Customer Service & Delivery Staff",
+    company: "Sokthavy Supermarket",
+    period: "Oct 2024 – Jul 2025",
     type: "Part-time",
+    link: "https://share.google/vijV4IbUcI0CkAQrT",
+    images: ["/experience-images/supermarket/image0.jpg"],
     description:
-      "Testing and quality assurance for mobile and web applications. Identifying bugs, ensuring proper functionality, and maintaining code quality standards.",
-    tags: ["QA Testing", "Bug Tracking", "Quality Assurance"],
+      "Handled customer service, stock management, and daily store operations. Developed strong communication and time management skills in a fast-paced retail environment.",
+    tags: ["Customer Service", "Stock Management", "Communication"],
   },
   {
-    role: "Frontend Developer Intern",
-    company: "Tech Startup — Vientiane",
-    period: "Jun 2024 – Aug 2024",
-    type: "Internship",
+    role: "Rugby Coach",
+    company: "Lao Rugby Federation",
+    period: "Feb 2023 – Jul 2024",
+    type: "Volunteer",
+    link: "https://www.laorugby.com/",
+    images: [
+      "/experience-images/rugby-coach/image0.jpg",
+      "/experience-images/rugby-coach/image1.jpg",
+    ],
     description:
-      "Built responsive UI components with React and Tailwind CSS. Collaborated with the design team to translate Figma mockups into production-ready pages and improved page load performance by optimising asset delivery.",
-    tags: ["React", "Tailwind CSS", "Figma", "Git"],
-  },
-  {
-    role: "Web Design Assistant",
-    company: "Comcenter College — IT Department",
-    period: "Jan 2024 – May 2024",
-    type: "Part-time",
-    description:
-      "Assisted lecturers in maintaining the department website. Redesigned several landing sections and documented component usage for the student developer community.",
-    tags: ["HTML", "CSS", "JavaScript", "WordPress"],
-  },
-  {
-    role: "Freelance Graphic Designer",
-    company: "Self-employed",
-    period: "2023 – Present",
-    type: "Freelance",
-    description:
-      "Design social-media assets, event posters, and brand identity kits for local businesses and student organisations around Vientiane Capital.",
-    tags: ["Canva", "Illustrator", "Photoshop", "Branding"],
+      "Coaching rugby players and helping develop team skills, strategy, and sportsmanship. Leading training sessions and supporting player growth and discipline on and off the field.",
+    tags: ["Coaching", "Leadership", "Team Management", "Sports"],
   },
 ];
 
 const typeBadge: Record<string, string> = {
-  Internship: "bg-accent/15 text-accent",
   "Part-time": "bg-accent-violet/20 text-blue-400",
-  Freelance: "bg-emerald-500/15 text-emerald-400",
+  Volunteer: "bg-orange-500/15 text-orange-400",
 };
+
+function ImageSlider({ images }: { images: string[] }) {
+  const [current, setCurrent] = useState(0);
+
+  if (images.length === 0) return null;
+
+  const prev = () => setCurrent((p) => (p - 1 + images.length) % images.length);
+  const next = () => setCurrent((p) => (p + 1) % images.length);
+
+  return (
+    <div className="relative w-full rounded-xl mb-5 overflow-hidden bg-gray-100 dark:bg-gray-800">
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={current}
+          src={images[current]}
+          alt={`Work photo ${current + 1}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+          className="block w-full h-auto"
+          style={{ maxHeight: "520px", objectFit: "contain" }}
+        />
+      </AnimatePresence>
+
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={prev}
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/70 transition-colors"
+          >
+            <FiChevronLeft size={15} />
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/70 transition-colors"
+          >
+            <FiChevronRight size={15} />
+          </button>
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`w-1.5 h-1.5 rounded-full transition-all ${
+                  i === current ? "bg-white scale-125" : "bg-white/40"
+                }`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
 
 export default function ExperiencePage() {
   const { pagemode, setPagemode } = useTheme();
@@ -98,13 +148,7 @@ export default function ExperiencePage() {
         animate="visible"
         className="text-center pt-16 pb-10 px-4"
       >
-        <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-accent/10 mb-4">
-          <FiBriefcase size={28} className="text-accent" />
-        </div>
         <h2 className="text-4xl font-bold">Work Experience</h2>
-        <p className="mt-2 text-sm text-gray-500 dark:text-gray-400 tracking-widest uppercase">
-          Roles · Internships · Freelance
-        </p>
         <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-linear-to-r from-accent to-accent-violet" />
       </motion.div>
 
@@ -113,7 +157,7 @@ export default function ExperiencePage() {
         variants={stagger}
         initial="hidden"
         animate="visible"
-        className="max-w-3xl mx-auto px-4 pb-24 relative"
+        className="max-w-5xl mx-auto px-6 pb-24 relative"
       >
         {/* vertical line */}
         <div className="absolute left-[28px] top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800 hidden sm:block" />
@@ -131,31 +175,52 @@ export default function ExperiencePage() {
 
             {/* card */}
             <div className="flex-1 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/60 backdrop-blur-sm shadow-sm hover:shadow-md transition-shadow px-6 py-5">
-              <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
-                <div>
-                  <h3 className="text-lg font-bold text-black dark:text-white">{exp.role}</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{exp.company}</p>
-                </div>
-                <div className="flex flex-col items-end gap-1.5">
-                  <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${typeBadge[exp.type]}`}>
+              {/* role title — above image */}
+              <h3 className="text-3xl font-bold text-black dark:text-white mb-4">{exp.role}</h3>
+
+              {/* image slider */}
+              <ImageSlider images={exp.images} />
+
+              {/* company / badge / period row */}
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
+                <p className="text-base text-gray-500 dark:text-gray-400">{exp.company}</p>
+                <div className="flex items-center gap-2">
+                  <span className={`text-sm font-semibold px-3 py-0.5 rounded-full ${typeBadge[exp.type]}`}>
                     {exp.type}
                   </span>
-                  <span className="text-xs text-gray-400">{exp.period}</span>
+                  <span className="text-sm text-gray-400">{exp.period}</span>
                 </div>
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+
+              {/* description */}
+              <p className="mt-3 text-base leading-relaxed text-gray-600 dark:text-gray-300">
                 {exp.description}
               </p>
+
+              {/* tags */}
               <div className="flex flex-wrap gap-2 mt-4">
                 {exp.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs px-2.5 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
+                    className="text-sm px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
+
+              {/* reference link */}
+              {exp.link && (
+                <a
+                  href={exp.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 mt-3 text-base font-medium text-accent hover:underline"
+                >
+                  <FiExternalLink size={16} />
+                  {exp.link.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                </a>
+              )}
             </div>
           </motion.div>
         ))}

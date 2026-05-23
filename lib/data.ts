@@ -57,16 +57,16 @@ export const EDUCATION_DATA = [
 ];
 
 export const PROJECT_IMAGES = [
-  "/image8/todolifeproject-iamge (1).png",
-  "/image8/todolifeproject-iamge (2).png",
-  "/image8/todolifeproject-iamge (3).png",
-  "/image8/todolifeproject-iamge (4).png",
-  "/image8/todolifeproject-iamge (5).png",
-  "/image8/todolifeproject-iamge (6).png",
-  "/image8/todolifeproject-iamge (7).png",
-  "/image8/todolifeproject-iamge (8).png",
-  "/image8/todolifeproject-iamge (9).png",
-  "/image8/todolifeproject-iamge (10).png",
+  "/image8/image0.png",
+  "/image8/image1.png",
+  "/image8/image2.png",
+  "/image8/image3.png",
+  "/image8/image4.png",
+  "/image8/image5.png",
+  "/image8/image6.png",
+  "/image8/image7.png",
+  "/image8/image8.png",
+  "/image8/image9.png",
 ];
 
 export const PROJECT_FEATURES = [
@@ -88,4 +88,10 @@ export const PROJECT_TECH = [
   "Redis",
 ];
 
-export const DESIGN_IMAGES = ["/dsimg1.png", "/designimg2.png"];
+export const DESIGN_IMAGES = [
+  "/design-skill-iamge/image0.png",
+  "/design-skill-iamge/image1.png",
+  "/design-skill-iamge/image2.png",
+  "/design-skill-iamge/image3.png",
+  "/design-skill-iamge/image4.jpg",
+];
